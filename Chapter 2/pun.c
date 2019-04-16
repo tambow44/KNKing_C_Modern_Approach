@@ -1,3 +1,8 @@
+/*    Name: pun.c
+ * Purpose: Prints a bad pun.
+ *  Author: tambow44
+ */
+
 #include <stdio.h>
 
 int main(void)
