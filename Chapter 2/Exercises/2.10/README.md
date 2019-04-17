@@ -25,7 +25,7 @@ int main(void)
 }
 ```
 This program requires `spaces` in the following places:
-```
+
 1) Between `#include` and `<stdio.h>` (true for all `directives`)  
 2) A `linebreak` [type of `space`] after the above `directive` (so, between the `<stdio.h>` and `int main`  
 3) Between `return` and `0`  
