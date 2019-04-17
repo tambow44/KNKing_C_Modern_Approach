@@ -35,7 +35,7 @@ Output is:
 0.000000
 ```
 Will produce some warnings:
-```
+```c
 2.4.c:8:19: warning: variable 'a' is uninitialized when used here [-Wuninitialized]
    printf("%d\n", a);
                   ^
