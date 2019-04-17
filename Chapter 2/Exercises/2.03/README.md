@@ -25,7 +25,6 @@ int main(void)
 ```
 
 ### Solution
-
 #### 2.3.c
 ```c
 #include <stdio.h>
