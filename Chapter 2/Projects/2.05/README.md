@@ -24,7 +24,7 @@ int main(void)
 
    result = (3 * x5) + (2 * x4) - (5 * x3) - x2 + (7 * x) - 6;
 
-   printf("Polynominal result of above formula is %d, where x is %d.\n", result, x);
+   printf("Polynominal result of above formula is %d.\n", result);
 
    return 0;
 }
