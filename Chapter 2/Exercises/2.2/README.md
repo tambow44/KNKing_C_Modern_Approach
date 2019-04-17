@@ -20,7 +20,7 @@ a)
 Directives are line 1.
 Statements are lines 5-8.
 
-```
+```c {.line-numbers}
 1 | #include <stdio.h>
 2 | 
 3 | int main(void)
