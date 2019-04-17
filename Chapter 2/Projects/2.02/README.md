@@ -3,7 +3,7 @@ Write a program that computes the volumes of a sphere with a 10 metre radius, us
 
 ### Solution
 As the requirements are for a 10m radius, we can cheat a bit and hard-code `r` as `1000` (*10 x 10 x 10*).   
-For any other number, it would be better to calculate the radius and its cubed state by assigning as variable `radius = r * (r * r)`
+For any other number, it would be better to calculate the radius and its cubed state by assigning as variable `radius = r * (r * r)`;
 #### 2.2.c
 ```c
 #include <stdio.h>
