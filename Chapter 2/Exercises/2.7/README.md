@@ -10,5 +10,5 @@ e) `while`
 ### Solution
 
 (a) and (e) are `keywords`.  
-`If` is illegal as must be lowercase (i.e. `if`).  
+(b) is illegal as `keywords` must be lowercase.  
 (c) and (d) are `functions`.
