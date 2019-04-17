@@ -20,7 +20,7 @@ a)
 Directives are line 1.
 Statements are lines 5-8.
 
-```c class:"lineNo"
+```c {.line-numbers}
 #include <stdio.h>
 
 int main(void)
