@@ -9,4 +9,5 @@ e) `while`
 
 ### Solution
 
-(a) and (e) are keywords. `If` is illegal as must be lowercase (i.e. `if`).
+(a) and (e) are `keywords`. `If` is illegal as must be lowercase (i.e. `if`).  
+(c) and (d) are `functions`.
