@@ -15,7 +15,7 @@ go away?
 Compiling using clang produces no warnings.
 Compiling using gcc with c89 standard produces the following warning:
 
-```
+```c
 2.1.1.c: In function ‘main’:
 2.1.1.c:6:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
