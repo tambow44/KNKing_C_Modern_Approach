@@ -8,4 +8,4 @@ d) `bottles_by_the_hundred_`
 
 ### Solution
 
-`(a)` is not a legal identifier in C. Identifiers can only start with a letter `[a-z]`, or an underscore `[_]`.
+`(a)` is not a legal identifier in C. Identifiers can only start with a letter [`a-z`], or an underscore [`_`].
