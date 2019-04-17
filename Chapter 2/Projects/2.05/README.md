@@ -5,7 +5,7 @@ Write a program that asks the user to enter a value for `x` and then displays th
 *Hint:* C doesn't have an exponentiation operator, so you'll need to multiply `x` by itself repeatedly in order to compute the powers of `x`. (For example, `x * x * x` is `x` cubed.)
 
 ### Solution
-#### 2.4.c
+#### 2.5.c
 ```c
 #include <stdio.h>
 
