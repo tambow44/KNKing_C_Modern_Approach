@@ -30,3 +30,4 @@ Statements are lines 5-8.
 7 |     printf("available for its completion.\n");
 8 |     return 0;
 9 | }
+```
