@@ -3,7 +3,7 @@ Condense the `dweight.c` program by (1) replacing the assignments to `height`, `
 
 #### dweight.c (Unmodified)
 
-```
+```c
 #include <stdio.h>
 
 int main(void)
