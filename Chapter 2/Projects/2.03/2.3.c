@@ -7,7 +7,7 @@ int main(void)
      radius, cubed;
 
    printf("Enter radius (metres): ");
-   scanf("%f", &radius);
+    scanf("%f", &radius);
 
    cubed = radius * (radius * radius);
 
