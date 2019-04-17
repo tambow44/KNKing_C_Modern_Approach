@@ -12,6 +12,7 @@ int main(void)
 }
 ```
 a) Identify the directives and statements in this program.
+
 b) What output does the program produce?
 
 ### Solution
@@ -19,7 +20,6 @@ b) What output does the program produce?
 a)
 Directives are line 1.
 Statements are lines 5-8.
-
 ```
 1| #include <stdio.h>
 2| 
