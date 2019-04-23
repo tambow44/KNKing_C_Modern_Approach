@@ -23,7 +23,7 @@ int main(void)
 {
 	int n1, n2, n3, n4, n5, n6, n7, n8,
 		 n9, n10, n11, n12, n13, n14, n15, n16;	
-	printf("ENter the numbers from 1 to 16 in any order: ");
+	printf("Enter the numbers from 1 to 16 in any order: ");
 	scanf("%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d", \
 			&n1, &n2, &n3, &n4, &n5, &n6, &n7, &n8, \
 			&n9, &n10, &n11, &n12, &n13, &n14, &n15, &n16);
