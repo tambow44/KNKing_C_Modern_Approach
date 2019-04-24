@@ -42,6 +42,14 @@ int main(void)
    return 0;
 }
 ```
+This compiles fine, but produces the following error:
+```c
+4.10.c:20:21: warning: multiple unsequenced modifications to 'j'
+      [-Wunsequenced]
+   j = (i = 6) + (j = 3);
+     ~              ^
+1 warning generated.
+```
 #### Output
 ```
 12 12
