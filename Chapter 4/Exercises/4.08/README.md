@@ -1,3 +1,8 @@
+### Exercise 4.8
+Would the `upc` program stll work in expression `8 - ((total -1) % 10)` were replaced by `(10 - (total % 10)) % 10`?
+### Solution
+#### 4.8.c
+```c
 #include <stdio.h>
 
 int main(void)
@@ -17,6 +22,7 @@ int main(void)
    total = 3 * first_sum + second_sum;
 
    printf("Check digit: %d\n", 9 - ((total -1) % 10));
-   printf("Check digit: %d\n", 10 - ((total / 10) % 10));
+   printf("Check digit: %d\n", (10 - (total % 10)) % 10);
    return 0;
 }
+```

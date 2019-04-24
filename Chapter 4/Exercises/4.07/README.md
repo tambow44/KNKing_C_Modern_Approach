@@ -33,10 +33,16 @@ int main(void)
    total = 3 * first_sum + second_sum;
 
    printf("Check digit: %d\n", 9 - ((total -1) % 10));
-   /* Simplified solution */
-   printf("Check digit: %d\n", (10 - (total % 10)) % 10);
+   /* "Simplified" solution */
+   printf("Check digit: %d\n", 10 - ((total / 10) % 10));
    return 0;
 }
 ```
 #### Output
-Produces the same result. I can't produce any differently between C89 & C99.
+```
+Enter the first (single) digit: 0
+Enter first group of five digits: 13800
+Enter second group of five digits: 15173
+Check digit: 5
+Check digit: 6
+```

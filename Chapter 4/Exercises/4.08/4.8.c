@@ -17,6 +17,6 @@ int main(void)
    total = 3 * first_sum + second_sum;
 
    printf("Check digit: %d\n", 9 - ((total -1) % 10));
-   printf("Check digit: %d\n", 10 - ((total / 10) % 10));
+   printf("Check digit: %d\n", (10 - (total % 10)) % 10);
    return 0;
 }
