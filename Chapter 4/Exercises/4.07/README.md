@@ -12,7 +12,7 @@ Subtract the remainder from 10.
 ```
 Why doesn't this technique work?
 ### Solution
-####4.7.c
+#### 4.7.c
 ```c
 #include <stdio.h>
 
