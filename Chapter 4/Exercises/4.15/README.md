@@ -1,4 +1,4 @@
-### Exercise 4.13
+### Exercise 4.15
 Give the values of `i` and `j` after each of the following expression statements has been executed. (Assume that `i` has the value of `1` and `j` has the value of `2`.)
 ```
 a) i += j;
@@ -7,7 +7,7 @@ c) - * j / i;
 d) i % ++j;
 ```
 ### Solution
-#### 4.13.c
+#### 4.15.c
 ```c
 #include <stdio.h>
 
