@@ -15,7 +15,6 @@ d) (((a * (- b)) / c) - d)
 ```
 #### 4.13.c
 ```c
-```
 #include <stdio.h>
 
 int main(void)
@@ -35,6 +34,7 @@ int main(void)
 
    return 0;
 }
+```
 #### Output
 ```
  5
