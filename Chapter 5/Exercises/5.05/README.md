@@ -6,7 +6,7 @@ if (n >= 1 <= 10)
 ```
 If so, what does it do when `n` is equal to `5`?
 ### Solution
-This `if` statement is illegal. It will always return true, regardless of what `n` is.
+While this `if` statement is legal; it will always return true, regardless of what `n` is. 
 
 The compiler will tell you as such:
 ```c
