@@ -4,7 +4,7 @@ Is the following `if` statement legal?
 if (n >= 1 <= 10)
    printf("n is between 1 and 10\n");
 ```
-If so, what does it do when `n` is equal to `5`?
+If so, what does it do when `n` is equal to `0`?
 ### Solution
 While this `if` statement is legal; it will always return true, regardless of what `n` is. 
 
