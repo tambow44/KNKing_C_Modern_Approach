@@ -9,7 +9,7 @@ switch (i % 3) {
 }
 ```
 ### Solution
-Outputs `onetwo`. This is due to the missing `break` statements for each `case`. Will produce `zeroonetwo` if `i = 0`.
+Outputs `onetwo`. This is due to the missing `break` statements for each `case`; will produce `zeroonetwo` if `i = 0`.
 #### 5.10.c
 ```c
 #include <stdio.h>
