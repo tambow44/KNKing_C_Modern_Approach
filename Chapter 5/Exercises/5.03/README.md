@@ -1,4 +1,6 @@
 ### Exercise 5.3
+The following program fragments illustrate the short-circuit behavior of logical expressions. Show the output produced by each, assuming that `i`, `j`, and `k` are `int` variables.
+
 
 ```
 a) i = 3; j = 4; k = 5; 
