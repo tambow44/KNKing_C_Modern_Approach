@@ -1,4 +1,4 @@
-### Exercise 5.7
+### Exercise 5.8
 The following `if` statement is unnecessarily complicated. Simplify it as much as possible.   
 (*Hint:* The entire statement can be replaced by a single assignment.)
 ```
@@ -13,7 +13,7 @@ else if (age < 13)
 ```
 ### Solution
 Single assignment looks like: `teenager = age >= 13 && age <= 19;`
-#### 5.7.c
+#### 5.8.c
 ```c
 #include <stdio.h>
 #include <stdbool.h>
