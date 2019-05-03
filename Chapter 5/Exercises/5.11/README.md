@@ -47,9 +47,9 @@ int main(void)
 ```
 #### Output
 ```
-Enter the area code: 333
-Area code not recognized
----
 Enter the area code: 404
 Atlanta
+---
+Enter the area code: 333
+Area code not recognized
 ```
