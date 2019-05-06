@@ -21,7 +21,7 @@ int main(void)
       tax = 230.f + (.06f * (income - 7000.f));
    }
 
-   printf("Tax is: %.2f\n", tax);
+   printf("Tax due: %.2f\n", tax);
 
    return 0;
 }
