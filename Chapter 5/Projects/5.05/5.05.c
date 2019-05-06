@@ -2,28 +2,26 @@
 
 int main(void)
 {
-   int speed;
+   float income, tax;
 
-   printf("Enter a wind speed (in knots): ");
-    scanf("%d", &speed);
+   printf("Enter the amount of taxable income: ");
+    scanf("%f", &income);
 
-   printf("Description: ");
-
-   if (speed < 1) {
-      printf("Calm");
-   } else if (speed <= 3) {
-      printf("Light air");
-   } else if (speed <= 27) {
-      printf("Breeze");
-   } else if (speed <= 47) {
-      printf("Gale");
-   } else if (speed <= 63) {
-      printf("Storm");
+   if (income <= 750.f) {
+      tax = income * .01f;
+   } else if (income <= 2250.f) {
+      tax = 7.5f + (.02f * (income - 750.f));
+   } else if (income <= 3750.f) {
+      tax = 37.5f + (.03f * (income - 2250.f));
+   } else if (income <= 5250.f) {
+      tax = 85.5f + (.04f * (income - 3750.f));
+   } else if (income <= 7000.f) {
+      tax = 142.f + (.05f * (income - 5250.f));
    } else {
-      printf("Hurricane");
+      tax = 230.f + (.06f * (income - 7000.f));
    }
 
-   printf("\n");
+   printf("Tax is: %.2f\n", tax);
 
    return 0;
 }
