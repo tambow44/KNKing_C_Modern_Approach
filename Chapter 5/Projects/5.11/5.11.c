@@ -7,10 +7,10 @@ int main(void)
    printf("Enter a two-digit number: ");
     scanf("%d", &number);
 
-	if (number < 10 || number > 99) {
-		printf("ERROR : Number must be between 10-99.");
-		return 0;
-	}
+   if (number < 10 || number > 99) {
+      printf("ERROR : Number must be between 10-99.");
+      return 0;
+   }
 
    printf("You entered the number ");
 
