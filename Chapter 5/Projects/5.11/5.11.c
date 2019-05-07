@@ -2,13 +2,15 @@
 
 int main(void)
 {
-   int number, tens, ones;
+   int number;
    
    printf("Enter a two-digit number: ");
     scanf("%d", &number);
 
-   tens = number / 10;
-   ones = number % 10;
+	if (number < 10 || number > 99) {
+		printf("ERROR : Number must be between 10-99.");
+		return 0;
+	}
 
    printf("You entered the number ");
 
@@ -26,7 +28,7 @@ int main(void)
          case 19: printf("nineteen");  break;
       }
    } else {
-      switch (tens) {
+      switch (number / 10) {
          case 2: printf("twenty");  break;
          case 3: printf("thirty");  break;
          case 4: printf("forty");   break;
@@ -37,9 +39,9 @@ int main(void)
          case 9: printf("ninety");  break;
       }
 
-		if (ones != 0) {
-      	printf("-");
-         switch (ones) {
+      if ((number % 10) != 0) {
+         printf("-");
+         switch (number % 10) {
             case 1: printf("one");   break;
             case 2: printf("two");   break;
             case 3: printf("three"); break;
@@ -51,9 +53,9 @@ int main(void)
             case 9: printf("nine");  break;
          }
       }
-	}
+   }
 
-	printf(".\n");
+   printf(".\n");
 
    return 0;
 }
