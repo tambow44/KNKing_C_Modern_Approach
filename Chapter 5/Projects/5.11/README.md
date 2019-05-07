@@ -6,7 +6,7 @@ You entered the number: forty-five
 ```
 *Hint:* Break the number into two digits. User one `switch` statement to print the word for the first digit ("twenty", "thirty", and so forth). Use a second `switch` statement to print the word for the second digit. Don't forget that the numbers between `11` and `19` require special treatment.
 ### Solution
-See `5.11.c` for complete code (omitted as it's quite large).
+See [5.11.c](5.11.c) for complete code (omitted as it's quite large).
 #### Output
 ```
 Enter a two-digit number: 22
