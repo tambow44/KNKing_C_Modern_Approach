@@ -1,4 +1,4 @@
-### Exercise 2.3
+### Exercise 2.03
 Condense the `dweight.c` program by (1) replacing the assignments to `height`, `length`, `width` with initialisers, and (2) removing the `weight` variable, instead calculating `(volume + 165) / 166` within the last `printf`.
 
 #### dweight.c (Unmodified)
@@ -25,7 +25,7 @@ int main(void)
 ```
 
 ### Solution
-#### 2.3.c
+#### 2.03.c
 ```c
 #include <stdio.h>
 

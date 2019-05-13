@@ -1,5 +1,5 @@
-### Exercise 4.4
-Repeat Exercise 4.3 for C99.
+### Exercise 4.04
+Repeat `Exercise 4.03` for C99.
 ### Solution
 #### Output
 ```
