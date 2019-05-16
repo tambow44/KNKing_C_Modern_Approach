@@ -4,13 +4,14 @@ int main(void)
 {
    int num;
 
-   printf("Enter a number: ");
+   printf("Enter number: ");
    scanf("%d", &num);
 
-	
+   printf("The reversal: ");
+
    do {
-		printf("%d", n % 10);
-		n /= 10;   
+      printf("%d", num % 10);
+      num /= 10;   
    } while (num != 0);
 
    return 0;
