@@ -14,7 +14,7 @@ int main(void)
 
       if (mm == 0 && dd == 0 && yy == 0) {
          printf("%.2d/%.2d/%.2d is the earliest date", me, de, ye);
-			return 0;
+         return 0;
       } else if (yy < ye || (yy < ye && mm < me) || (yy < ye && mm < me && dd < de))  {
          me = mm, de = dd, ye = yy;
       }

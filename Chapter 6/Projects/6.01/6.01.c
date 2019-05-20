@@ -14,7 +14,7 @@ int main(void)
       }
       goto start;
    }
-	printf("\nThe largest number entered was %.2f\n", largest);
+   printf("\nThe largest number entered was %.2f\n", largest);
 
    return 0;
 }
