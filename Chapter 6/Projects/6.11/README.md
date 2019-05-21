@@ -25,7 +25,7 @@ int main(void)
       e += 1.0f / (j *= i);
    }
 
-   printf("e is: %f\n", e);
+   printf("Approximation of e: %f\n", e);
 
    return 0;
 }
