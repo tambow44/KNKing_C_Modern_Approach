@@ -8,7 +8,7 @@ d) printf(c);
 ```
 ### Solution
 `d)` is illegal; printf requires types to be passed through as arguments:
-`c printf("%s", c);` would be legal.
+`printf("%s", c);` would be legal.
 #### 7.04.c
 ```c
 #include <stdio.h>
