@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	printf("%d\n%d\n%d\n%d\n", 'A', 0b1000001, 0101, 0x41);
+   printf("%d\n%d\n%d\n%d\n", 'A', 0b1000001, 0101, 0x41);
 
-	return 0;
+   return 0;
 }
