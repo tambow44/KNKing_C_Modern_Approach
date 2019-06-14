@@ -2,7 +2,6 @@
 
 int main(void)
 {
-
    float number, value;
    char ch;
 
@@ -30,7 +29,6 @@ int main(void)
          default: break;
       }
    }
-
 
    printf("Value of expression: %.1f\n", value);
 
