@@ -1,4 +1,4 @@
-### Project 7.12
+### Project 7.13
 Write a program that calculates the average word length for a sentence:
 ```
 Enter a sentence: It was deja vu all over again.
@@ -6,7 +6,7 @@ Average word length: 3.4
 ```
 For simplicity, your program should consider a punctuation mark to be part of the word to which it is attached. Display the average length to one decimal place.
 ### Solution
-#### 7.12.c
+#### 7.13.c
 ```c
 #include <stdio.h>
 
