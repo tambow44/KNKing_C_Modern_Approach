@@ -14,12 +14,44 @@ Let `x` be the number entered by the user. Newton's method requires an initial g
 |3|1.73214|1.73196|1.73205|
 |3|1.73205|1.73205|1.73205|
 
-
-
+Note that the values of `y` get progressively closer to the true square root of `x`. For greater accuracy, your program should use variables of type `double` rather than `float`. Have the program terminate when the absolute value of the difference between the old value of `y` and the new value of `y` is less than the product of `.00001` and `y`. *Hint:* Call the `fabs` function to find the absolute value of a `double`. (You'll need to include the `<math.h>` header at the beginning of your program in order to use `fabs`.)
 
 ### Solution
 #### 7.14.c
 ```c
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+   double x, y, xy, average;
+
+   printf("Enter a positive number: ");
+    scanf("%lf", &x);
+
+   y = 1.0;
+
+   while (1) {
+      xy = x / y;
+      average = (y + xy) / 2;
+
+      if (fabs((y - average)) < 0.00001) {
+         break;
+      } else {
+         y = average;
+      }
+   }
+
+   printf("Square root: %.5lf\n", y);
+
+   return 0;
+}
 ```
 #### Output
+```
+Enter a positive number: 3
+Square root: 1.73205
+---
+Enter a positive number: 15
+Square root: 3.87298
 ```
