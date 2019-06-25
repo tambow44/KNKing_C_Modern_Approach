@@ -18,7 +18,7 @@ int main(void)
    for (count = 1; count <= shortNum; count++) {
       factorial *= count;
    }
-      printf("a) Factorial of %d: %.0Lf\n", shortNum, factorial);
+      printf("a) Factorial of %d: %.0Lf\n", intNum, factorial);
 
    for (count = 1; count <= intNum; count++) {
       factorial *= count;
@@ -28,27 +28,27 @@ int main(void)
    for (count = 1; count <= longNum; count++) {
       factorial *= count;
    }
-      printf("c) Factorial of %ld: %.0Lf\n", longNum, factorial);
+      printf("c) Factorial of %d: %.0Lf\n", intNum, factorial);
 
    for (count = 1; count <= longLongNum; count++) {
       factorial *= count;
    }
-      printf("d) Factorial of %lld: %.0Lf\n", longLongNum, factorial);
+      printf("d) Factorial of %d: %.0Lf\n", intNum, factorial);
 
    for (count = 1; count <= floatNum; count++) {
       factorial *= count;
    }
-      printf("e) Factorial of %f: %.0Lf\n", floatNum, factorial);
+      printf("e) Factorial of %d: %.0Lf\n", intNum, factorial);
 
    for (count = 1; count <= doubleNum; count++) {
       factorial *= count;
    }
-      printf("f) Factorial of %f: %.0Lf\n", doubleNum, factorial);
+      printf("f) Factorial of %d: %.0Lf\n", intNum, factorial);
 
    for (count = 1; count <= longDoubleNum; count++) {
       factorial *= count;
    }
-      printf("g) Factorial of %Lf: %.0Lf\n", longDoubleNum, factorial);
+      printf("g) Factorial of %d: %.0Lf\n", intNum, factorial);
 
    return 0;
 }
