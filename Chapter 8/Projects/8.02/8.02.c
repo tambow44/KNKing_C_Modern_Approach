@@ -1,11 +1,8 @@
-#include <stdbool.h>    /* C99 only */
 #include <stdio.h>
 
 int main(void)
 {
-   bool digit_seen[10] = {false},
-            repeat[10] = {false};
-   int digit, i;
+   int i, digit, occur[10] = {0};
    long n;
 
    printf("Enter a number: ");
@@ -13,20 +10,16 @@ int main(void)
 
    while (n > 0) {
       digit = n % 10;
-      if (digit_seen[digit]) {
-
-      }
-      digit_seen[digit] = true;
+      occur[digit]++;
       n /= 10;
    }
-   printf("Digit:        0  1  2  3  4  5  6  7  8  9\n");
-   printf("Occurrences:");
-      for (i = 0; i < 10; i++) {
-         if (repeat[i]) {
-            printf("  %d", repeat[i]);
-         }
-      }
 
+   printf("Digit:\t\t 0  1  2  3  4  5  6  7  8  9\n");
+   printf("Occurrences:\t");
+
+   for (i = 0; i < 10; i++) {
+      printf("%2d ", occur[i]);
+   }
    printf("\n");
 
    return 0;
