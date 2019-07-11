@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>  /* srand() & rand() functions */
-#include <stdbool.h> /* TRUE(1) & FALSE(0) */
+#include <stdbool.h> /* TRUE(1) & FALSE(0) */   // DO I EVEN NEED THIS!?
 #include <time.h>    /* provides 'random' number for srand() */
 
 #define N 10
@@ -27,15 +27,14 @@ int main(void)
    for (i = 0; i < N; i++) {
       for (j = 0; j < N; j++) {
          direction = (rand() % 4);
-         
          if (direction == 0) {         // UP
-            
+            ; 
          } else if (direction == 1) {  // DOWN
-            
+            ;
          } else if (direction == 2) {  // LEFT
-            
+            ;
          } else if (direction == 3) {  // RIGHT
-            
+            ;
          }
       }
    }
