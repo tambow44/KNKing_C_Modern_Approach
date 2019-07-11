@@ -1,43 +1,56 @@
+/*
+ * Total, and Average score for each student
+ * Average, Highest, and Lowest score for each quiz
+ */
+
 #include <stdio.h>
 
 #define NUM 5
 
 int main(void)
 {
-   int i, j, t_total,
-         n[NUM][NUM];
+   int i, j, t_total, high, low;
+   int n[NUM][NUM];
 
    for (i = 0; i < NUM; i++) {
-      printf("Enter quiz frade for student #%d: ", i+1);
+      printf("Enter quiz grade for student #%d: ", i+1);
 
       for (j = 0; j < NUM; j++) {
          scanf("%d", &n[i][j]);
       }
    }
 
-   printf("\nTotal score for student %d:");
-   for (i
-
-
-   printf("\nRow totals:");
-/* j iterates 0-4, then resets; i iterates at each j reset */
    for (i = 0; i < NUM; i++) {
+      printf("\nTotal and average scores for student #%d:", i+1);
       t_total = 0;
+
       for (j = 0; j < NUM; j++) {
          t_total += n[i][j];
       }
-      printf(" %d", t_total);
+
+      printf(" %3d %.2f", t_total, ((double) t_total / NUM));
    }
-   
-   printf("\nColumn totals:");
-/* i iterates 0-4, then resets; j iterates at each i reset */
+
+   printf("\n");
+
    for (j = 0; j < NUM; j++) {
+      printf("\nAverage, highest, and lowest scores for quiz #%d:", j+1);
       t_total = 0;
+      high = low = n[0][j];
+
       for (i = 0; i < NUM; i++) {
          t_total += n[i][j];
+         if (n[i][j] > high) {
+            high = n[i][j];
+         }
+         if (n[i][j] < low) {
+            low = n[i][j];
+         }
       }
-      printf(" %d", t_total);
+      printf(" %.2f %3d %3d", ((double) t_total / NUM), high, low);
    }
+
+   printf("\n");
 
    return 0;
 }
