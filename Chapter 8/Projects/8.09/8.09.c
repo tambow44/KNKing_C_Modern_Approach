@@ -33,9 +33,9 @@ int main(void)
 
       switch(direction) {
          case 0: // UP
-            if (!(board[i-1][j] < 0)) {
-               board[i-1][j] = alphabet;
-               i--;
+            if (!(board[i-1][j] < 0)) {   // Need to sort this out
+               board[i-1][j] = alphabet;  // Wankers
+               i--;                       // Not sure this helps, need to move it
             }
             break;
          case 1: // DOWN
