@@ -1,73 +1,82 @@
 #include <stdio.h>
-#include <stdlib.h>  /* srand() & rand() functions */
-#include <stdbool.h> /* TRUE(1) & FALSE(0) */                     // DO I EVEN NEED THIS!?
-#include <time.h>    /* provides 'random' number for srand() */
+#include <stdlib.h>
+#include <stdbool.h>
+#include <time.h>
 
 #define N 10
-#define A_TO_Z 26                                                 // NEEDED ?
-#define SIZE(a) ((int) (sizeof (a) / sizeof (a)[0]))              // NEEDED?
 
 int main(void)
 {
-   int i, j, direction;
-   char board[N][N];    // 10 x 10 board
-   char alphabet = 'A'; // while < 'Z'; alphabet++ (A -> B)
+   int
+      i, j,
+      direction;
+   bool
+      up, down, left, right;
+   char
+      board[N][N] = {{false}},
+      alphabet = 'A';
 
-   srand((unsigned) time(NULL)); // ensures rand() is always unique
+   srand((unsigned) time(NULL));
 
-   /* Generates blank board */
-   for (i = 0; i < N; i++) {
-      for (j = 0; j < N; j++) {
-         board[i][j] = '.';
-      }
-   }
-
-   board[0][0] = alphabet;    // Start the show with 'A'; increment (B)
-   printf("Alphabet: %c\n", alphabet);
-
+   board[0][0] = alphabet++;
    i = j = 0;
-   while (alphabet < 'Z') {
-      alphabet++;
-      direction = (rand() % 4);  // 0: UP; 1: DOWN; 2: LEFT; 3: RIGHT
-      printf("Alphabet: %c\tDirection: %i\n", alphabet, direction);
+
+   while (alphabet <= 'Z') {
+      up = down = left = right = direction = false;
+      direction = (rand() % 4);
+
+        if (i-1 >= 0 && board[i-1][j] == false) {
+         up = true;
+      } if (i+1  < N && board[i+1][j] == false) {
+         down = true;
+      } if (j-1 >= 0 && board[i][j-1] == false) {
+         left = true;
+      } if (j+1  < N && board[i][j+1] == false) {
+         right = true;
+      }
+
+      /* break out of program if direction is 'full'  */ 
+      if (up + down + left + right == false) { 
+            break;
+         }
 
       switch(direction) {
-         case 0: // UP
-            if (!(board[i-1][j] < 0)) {   // Need to sort this out
-               board[i-1][j] = alphabet;  // Wankers
-               i--;                       // Not sure this helps, need to move it
+         case 0 :
+            if (up) {
+               board[--i][j] = alphabet++;
             }
             break;
-         case 1: // DOWN
-            if (!(board[i+1][j] > N)) {
-               board[i+1][j] = alphabet;
-               i++;
+         case 1 :
+            if (down) {
+               board[++i][j] = alphabet++;
             }
             break;
-         case 2: // LEFT
-            if (!(board[i][j-1] < 0)) {
-               board[i][j-1] = alphabet;
-               j--;
+         case 2 :
+            if (left) {
+               board[i][--j] = alphabet++;
             }
             break;
-         case 3: // RIGHT
-            if (!(board[i][j+1] > N && board[i][j+1] == '.')) {
-               board[i][j+1] = alphabet;
-               j++;
+         case 3 :
+            if (right) {
+               board[i][++j] = alphabet++;
             }
             break;
          default :
             break;
       }
+
    }
-printf("\n\n\n");
 
    for (i = 0; i < N; i++) {
       for (j = 0; j < N; j++) {
-         printf("%c ", board[i][j]);
+         if (board[i][j] == false) {
+            board[i][j] = '.';
+         }
+       printf("%c ", board[i][j]);
       }
-   printf("\n");
+      printf("\n");
    }
+   printf("\n");
 
    return 0;
 }
