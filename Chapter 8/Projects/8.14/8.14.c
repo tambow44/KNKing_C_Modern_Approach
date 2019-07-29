@@ -3,11 +3,9 @@
 #define N 50
 int main(void)
 {
-    int i = 0, j, space_start, space_end = N-1;
-   char ch, sentence[N] = {0}, terminating_character;
+    int i = 1, j, space_start, space_end = N-1;
+   char ch, sentence[N] = {' ', 0}, terminating_character;
    
-   sentence[i++] = ' ';
-
    printf("Enter a sentence: ");
    while ((ch = getchar())) {
       if (ch == '.' || ch == '?' || ch == '!') {
