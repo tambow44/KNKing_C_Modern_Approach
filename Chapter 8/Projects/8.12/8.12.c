@@ -1,21 +1,24 @@
 #include <stdio.h>
+#include <ctype.h>
 
 #define N 26
 int main(void)
 {
-
    char ch;
-   int i,
-                  /* A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P,  Q, R, S, T, U, V, W, X, Y, Z */
-       points[N] = { 1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10 };
+    int sum = 0,
+        points[N] = { 1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10 };
 
-   
-   /*  a  z  */
-   /* 97 122 */
+   printf("Enter a word: ");
 
-   /*  A Z  */
-   /* 65 90 */
+   while ((ch = getchar()) != '\n') {
+      ch = (char)toupper((unsigned char)ch);
 
+      if ( ((ch - 65) >= 0) && ((ch - 65) <= 25) ) {
+         sum += points[ch - 65];
+      }
+   }
+
+   printf("Scrabble value: %d\n", sum);
 
    return 0;
 }
