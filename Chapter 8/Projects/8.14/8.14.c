@@ -5,7 +5,7 @@ int main(void)
 {
     int i = 1, j, space_start, space_end = N-1;
    char ch, sentence[N] = {' ', 0}, terminating_character;
-   
+
    printf("Enter a sentence: ");
    while ((ch = getchar())) {
       if (ch == '.' || ch == '?' || ch == '!') {
