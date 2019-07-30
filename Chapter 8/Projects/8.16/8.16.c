@@ -9,17 +9,15 @@ int main(void)
 
    printf("Enter first word: ");
    while ((ch = getchar()) != '\n') {
-      i = (int)tolower((unsigned char)ch);
-      if ( (i - 97) >= 0 && (i - 97) <= 25 ) {
-         alphabet[i-97]++;
+      if (isalpha((int)ch)) {
+            alphabet[tolower((int)ch) - 'a']++;
       }
    }
 
    printf("Enter second word: ");
    while ((ch = getchar()) != '\n') {
-      i = (int)tolower((unsigned char) ch);
-      if ( (i -97) >= 0 && (i - 97) <= 25 ) {
-         alphabet[i-97]--;
+      if (isalpha((int)ch)) {
+         alphabet[tolower((int)ch) - 'a']--;
       }
    }
 
