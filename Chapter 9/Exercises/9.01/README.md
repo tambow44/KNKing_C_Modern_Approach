@@ -14,8 +14,8 @@ double product;
 Correct function:
 ```c
 double triangle_area(double base, double height);
-double product;
 {
+   double product;
    product = base * height;
    return product / 2;
 }
