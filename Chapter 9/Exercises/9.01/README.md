@@ -20,3 +20,31 @@ double product;
    return product / 2;
 }
 ```
+#### 9.01.c
+```c
+#include <stdio.h>
+
+double triangle_area(double base, double height)
+{
+   double product;
+   product = base * height;
+   return product / 2;
+}
+
+int main(void)
+{
+   double base, height, result;
+   printf("Enter value of base and height: ");
+    scanf("%lf %lf", &base, &height);
+
+   result = triangle_area(base, height);
+   printf("Area of base %3.2lf and height %3.2lf is: %3.2lf", base, height, result);
+
+   return 0;
+}
+```
+#### Output
+```
+Enter value of base and height: 12.5 33.9
+Area of base 12.50 and height 33.90 is: 211.88
+```
