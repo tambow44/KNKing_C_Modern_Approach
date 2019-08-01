@@ -14,5 +14,7 @@ int main(void)
       num /= 10;   
    } while (num != 0);
 
+   printf("\n");
+
    return 0;
 }
