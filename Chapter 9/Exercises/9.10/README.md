@@ -51,7 +51,7 @@ int c_positive (int a[], int n)
 ```
 #### Output
 Where:
-```
+```c
 int a[LEN] = {1,2,3,4,15,6,7,-3,-9,10};
 ```
 ```

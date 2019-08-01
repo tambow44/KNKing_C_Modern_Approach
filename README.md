@@ -3,8 +3,8 @@
 
  ## Information
 
- All testing was done on CYGWIN_NT-10.0 3.0.6 x86_64, Compiling with clang v5.0.1+ . 
- The compiler has been set to run the C89 or C99 standard (per King's instructions).
+ All testing was done on Darwin Kernel Version 18.7.0, compiling with clang-1001.0.46.4
+ The compiler has been set to run the C89 or C99 standard (per King's instructions), I will specify where C89 is run (C99 takes precedence).
 
  ```bash
  $ clang hello.c -o hello.o -Wall -Wextra -Wpedantic -std=c99
