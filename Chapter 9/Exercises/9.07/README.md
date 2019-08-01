@@ -1,6 +1,6 @@
 ### Exercise 9.07
 Suppose that the function `f` has the following definition:
-```
+```c
 int f(int a, int b) { ... }
 ```
 Which of the following statements are legal? (Assume that `i` has type `int` and `x` has type `double`.)
