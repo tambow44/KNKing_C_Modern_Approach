@@ -9,11 +9,11 @@ d) f(double x);
 ### Soluton
 All will compile fine, however only `a)` is correct.
 Explanations below:
-`a) void f(double x);`
+   `a) void f(double x);`
 Compiles fine as prototype is correct.
-`b) void f(double);`
+   `b) void f(double);`
 Compiles fine, however while the input parameter has type definition, there is no variable assigned, so it is quite redundant.
-`c) void f(x);`
+   'c) void f(x);`
 Compiles, however the following warning is produced:
 ```c
 9.08.c:5:1: warning: parameter names (without types) in function declaration
@@ -21,7 +21,7 @@ Compiles, however the following warning is produced:
       | ^~~~
 ```
 This is due to the input parameter having no type declared.
-`d) f(double x);`
+   `d) f(double x);`
 Compiles, however the following warning is produced:
 ```c
 9.08.c:6:1: warning: data definition has no type or storage class
