@@ -6,7 +6,7 @@ b) void f(double);
 c) void f(x);
 d) f(double x);
 ```
-### Soluton
+### Solution
 All will compile fine, however only `a)` is correct.
 Explanations below:
 
