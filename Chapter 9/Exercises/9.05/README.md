@@ -49,6 +49,6 @@ int main(void)
 Enter number: 355
 Number of digits in 355: 3
 -- 
-Enter number: 9562
-Number of digits in 9562: 4
+Enter number: 9563
+Number of digits in 9563: 4
 ```
