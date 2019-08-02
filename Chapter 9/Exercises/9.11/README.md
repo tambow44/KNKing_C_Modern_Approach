@@ -1,5 +1,5 @@
 ### Exercise 9.11
-Write the followng function:
+Write the following function:
 ```c
 float computer_GPA(char grades[], int n);
 ```
