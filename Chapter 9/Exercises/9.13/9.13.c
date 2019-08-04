@@ -6,13 +6,11 @@ int evaluate_position(char board[8][8])
 
    for (i = 0; i < 8; i++) {
       for (j = 0; j < 8; j++) {
-         /* White pieces */
          board[i][j] == 'Q' ? white += 9 : white ;
          board[i][j] == 'R' ? white += 5 : white ;
          board[i][j] == 'B' ? white += 3 : white ;
          board[i][j] == 'N' ? white += 3 : white ;
          board[i][j] == 'P' ? white += 1 : white ;
-         /* Black pieces */
          board[i][j] == 'q' ? black += 9 : black ;
          board[i][j] == 'r' ? black += 5 : black ;
          board[i][j] == 'b' ? black += 3 : black ;
