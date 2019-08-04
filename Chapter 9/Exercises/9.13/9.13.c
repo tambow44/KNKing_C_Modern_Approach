@@ -39,7 +39,7 @@ int main(void)
       printf("There is no advantage.\n");
    } else {
       (result  > 0) ? printf("White") : printf("Black") ;
-      print(" has the advantage.\n");
+      printf(" has the advantage.\n");
    }
  
    return 0;
