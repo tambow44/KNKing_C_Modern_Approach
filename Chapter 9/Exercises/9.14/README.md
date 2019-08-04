@@ -15,7 +15,9 @@ bool has_zero(int a[], int n)
 }
 ```
 ### Solution
-Initially, function generates the following warning:
+The function `has_zeros` will return after checking the first element of `a`, not checking the subsequent elements. 
+
+Additionally, function generates the following warning:
 ```c
 9.14.c:15:1: warning: control may reach end of non-void function [-Wreturn-type]
 }
