@@ -34,14 +34,13 @@ int main(void)
                        { 'r', 'n', 'b' ,'q', 'k', 'b', 'n', 'r' }};
 
    int result = evaluate_position(board);
-
+   
    if (result == 0) {
       printf("There is no advantage.\n");
-   } else if (result > 0) {
-      printf("White has the advantage with %d points.\n", result);
-   } else if (result < 0) {
-      printf("Black has the advantage with %d points.\n", result);
+   } else {
+      (result  > 0) ? printf("White") : printf("Black") ;
+      print(" has the advantage\n");
    }
-
+ 
    return 0;
 }
