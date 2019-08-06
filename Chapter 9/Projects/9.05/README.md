@@ -13,6 +13,7 @@ void print_magic_square(int n, char magic_square[99][99]);
 See `9.05.c` for complete program.
 
 Functions are as follows:
+
 `create_magic_square`:
 ```c
 void create_magic_square(int n, char magic_square[n][n])
