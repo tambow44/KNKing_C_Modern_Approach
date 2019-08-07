@@ -9,6 +9,7 @@ You rolled: 8
 You win!
 
 Play again? y
+
 You rolled: 6
 Your point is 6
 You rolled: 5
