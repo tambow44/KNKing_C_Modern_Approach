@@ -22,6 +22,7 @@ int main(void)
 }
 ```
 For each of the following scopes, list all variables and parameter names visible in that scope:
+
 a) The `f` function  
 b) The `g` function  
 c) The block in which `e` is declared  
