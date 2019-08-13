@@ -9,8 +9,9 @@
 #define NUM_CARDS 5
 
 /* external variables */
-int num_in_rank[NUM_RANKS];
-int num_in_suit[NUM_SUITS];
+                                                                     //int num_in_rank[NUM_RANKS];
+                                                                     //int num_in_suit[NUM_SUITS];
+char hand[5][2];
 bool straight, flush, four, three;
 int pairs;   /* can be 0, 1, or 2 */
 
@@ -39,21 +40,25 @@ int main(void)
  **********************************************************/
 void read_cards(void)
 {
-   bool card_exists[NUM_RANKS][NUM_SUITS];
+                                                                  //   bool card_exists[NUM_RANKS][NUM_SUITS];
    char ch, rank_ch, suit_ch;
    int rank, suit;
    bool bad_card;
    int cards_read = 0;
 
+
    for (rank = 0; rank < NUM_RANKS; rank++) {
-      num_in_rank[rank] = 0;
+      hand[rank][suit] = 0;
+                                                                  //num_in_rank[rank] = 0;
       for (suit = 0; suit < NUM_SUITS; suit++)
-         card_exists[rank][suit] = false;
+         hand[rank][suit] = 0;
+                                                                  //card_exists[rank][suit] = false;
    }
-
+/*
    for (suit = 0; suit < NUM_SUITS; suit++)
-      num_in_suit[suit] = 0;
-
+                                                                  //      num_in_suit[suit] = 0;
+      hand[rank][suit] = 0;
+*/
    while (cards_read < NUM_CARDS) {
       bad_card = false;
 
@@ -92,12 +97,14 @@ void read_cards(void)
 
       if (bad_card)
          printf("Bad card; ignored.\n");
-      else if (card_exists[rank][suit])
+                                                               //      else if (card_exists[rank][suit])
+      else if (hand[rank][suit])
          printf("Duplicate card; ignored.\n");
       else {
-         num_in_rank[rank]++;
-         num_in_suit[suit]++;
-         card_exists[rank][suit] = true;
+         hand[rank][suit]++;
+                                                               //         num_in_rank[rank]++;
+                                                               //         num_in_suit[suit]++;
+                                                               //         card_exists[rank][suit] = true;
          cards_read++;
       }
    }
@@ -123,15 +130,18 @@ void analyze_hand(void)
 
    /* check for flush */
    for (suit = 0; suit < NUM_SUITS; suit++)
-      if (num_in_suit[suit] == NUM_CARDS)
+                                                            //      if (num_in_suit[suit] == NUM_CARDS)
+      if (hand[rank][suit] == NUM_CARDS)
          flush = true;
 
    /* check for straight */
    rank = 0;
 
-   while (num_in_rank[rank] == 0) rank++;
+                                                            //   while (num_in_rank[rank] == 0) rank++;
+   while (hand[rank][suit] == 0) rank++;
 
-   for (; rank < NUM_RANKS && num_in_rank[rank] > 0; rank++)
+                                                            //   for (; rank < NUM_RANKS && num_in_rank[rank] > 0; rank++)
+   for (; rank < NUM_RANKS && hand[rank][suit] > 0; rank++)
       num_consec++;
 
    if (num_consec == NUM_CARDS) {
@@ -141,9 +151,12 @@ void analyze_hand(void)
 
    /* check for 4-of-a-kind, 3-of-a-kind, and pairs */
    for (rank = 0; rank < NUM_RANKS; rank++) {
-      if (num_in_rank[rank] == 4) four = true;
-      if (num_in_rank[rank] == 3) three = true;
-      if (num_in_rank[rank] == 2) pairs++;
+                                                            //      if (num_in_rank[rank] == 4) four = true;
+                                                            //      if (num_in_rank[rank] == 3) three = true;
+                                                            //      if (num_in_rank[rank] == 2) pairs++;
+      if (hand[rank][suit] == 4) four = true;
+      if (hand[rank][suit] == 3) three = true;
+      if (hand[rank][suit] == 2) pairs++;
    }
 }
 
@@ -155,6 +168,14 @@ void analyze_hand(void)
  **********************************************************/
 void print_result(void)
 {
+   for (int i = 0; i < 5; i++) {
+      for (int j = 0; j < 2; j++) {
+         printf("%d ", hand[i][j]);
+      }
+      printf("\n");
+   }
+   printf("\n");
+
    if (straight && flush) printf("Straight flush");
    else if (four)         printf("Four of a kind");
    else if (three && 
