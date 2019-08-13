@@ -1,15 +1,47 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
 #define STACK_SIZE 100
 
 /* external variables */
-int contents(STACK_SIZE);
+char contents[STACK_SIZE];
 int top = 0;
 
-void make_empty(void)
+/* Function Prototypes */
+bool is_empty(void);
+bool is_full(void);
+void push(char ch);
+char pop(void);
+void stack_overflow(void);
+
+
+
+int main(void)
 {
-   top = 0;
+   char ch;
+   printf("Enter parentheses and/or braces: ");
+
+   while (ch != '\n') {
+      ch = getchar();
+
+      if (ch == '{' || ch == '(') {
+         push(ch);
+      } else if (ch == '}' || ch == ')') {
+         pop();
+      }
+
+   }
+
+   if (is_empty()) {
+      printf("Parentheses/braces are nested properly.\n");
+      exit(EXIT_SUCCESS);
+   } else {
+      printf("Parentheses/braces are not nested properly.\n");
+      exit(EXIT_SUCCESS);
+   }
+
+   return 0;
 }
 
 bool is_empty(void)
@@ -22,18 +54,24 @@ bool is_full(void)
    return top == STACK_SIZE;
 }
 
-void push(int i)
+void push(char ch)
 {
    if (is_full())
+      stack_overflow();
+   else
+      contents[top++] = ch;
+}
+
+char pop(void)
+{
+   if (is_empty())
       stack_overflow();
    else
       return contents[--top];
 }
 
-int pop(void)
+void stack_overflow(void)
 {
-   if (is_empty())
-      stack_underflow();
-   else
-      return contents[--top];
+   printf("\nStack overflow\n");
+   exit(EXIT_FAILURE);
 }
