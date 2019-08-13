@@ -14,8 +14,7 @@ bool is_full(void);
 void push(char ch);
 char pop(void);
 void stack_overflow(void);
-
-
+void stack_underflow(void);
 
 int main(void)
 {
@@ -30,16 +29,10 @@ int main(void)
       } else if (ch == '}' || ch == ')') {
          pop();
       }
-
    }
 
-   if (is_empty()) {
-      printf("Parentheses/braces are nested properly.\n");
-      exit(EXIT_SUCCESS);
-   } else {
-      printf("Parentheses/braces are not nested properly.\n");
-      exit(EXIT_SUCCESS);
-   }
+   printf("Parentheses/braces are ");
+   (is_empty()) ? printf("nested properly.\n") : printf("not nested properly.\n") ;
 
    return 0;
 }
@@ -56,22 +49,28 @@ bool is_full(void)
 
 void push(char ch)
 {
-   if (is_full())
+   if (is_full()) {
       stack_overflow();
-   else
+   } else {
       contents[top++] = ch;
+   }
 }
 
 char pop(void)
 {
-   if (is_empty())
-      stack_overflow();
-   else
-      return contents[--top];
+   (is_empty()) ? stack_underflow() : 0 ;
+
+   return contents[--top];
 }
 
 void stack_overflow(void)
 {
    printf("\nStack overflow\n");
+   exit(EXIT_FAILURE);
+}
+
+void stack_underflow(void)
+{
+   printf("\nStack underflow\n");
    exit(EXIT_FAILURE);
 }
