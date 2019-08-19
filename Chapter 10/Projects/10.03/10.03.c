@@ -6,11 +6,8 @@
 #define NUM_SUITS 4
 #define NUM_CARDS 5
 
-#define HAND_RANK 5
-#define HAND_SUIT 2
-
 /* external variables */
-int hand[HAND_RANK][HAND_SUIT];
+int hand[NUM_CARDS][2];
 bool straight, flush, four, three;
 int pairs;   /* can be 0, 1, or 2 */
 
@@ -19,8 +16,6 @@ void read_cards(void);
 void analyze_hand(void);
 void print_result(void);
 int card_exists(int rank, int suit);
-void quicksort(int a[], int low, int high);
-int split(int a[], int low, int high);
 
 int main(void)
 {
@@ -37,11 +32,6 @@ void read_cards(void)
    bool bad_card;
    int rank, suit;
    int cards_read = 0;
-
-   for (rank = 0; rank < HAND_RANK; rank++) {
-      for (suit = 0; suit < HAND_SUIT; suit++)
-         hand[rank][suit] = 0;
-   }
 
    while (cards_read < NUM_CARDS) {
       bad_card = false;
@@ -91,17 +81,45 @@ void read_cards(void)
    }
 }
 
+int card_exists(int rank, int suit)
+{
+   for (int i = 0; i < NUM_CARDS; i++) {
+         if (hand[i][0] == rank && hand[i][1] == suit)
+            return true;
+   }
+   return false;
+}
+
 void analyze_hand(void)
 {
-   int rank, suit;
-   int count = 0, temp = 0;
+   int num_consec = 0;
+   int card, count, t_rank, t_suit, small, temp;
+
    straight = false;
    flush = false;
    four = false;
    three = false;
    pairs = 0;
 
+// Sorting hat
+   for (int i = 0; i < NUM_CARDS; i++) {
+      small = i;
+
+      for (int j = 0; j < NUM_CARDS; j++) {
+         if (hand[j][0] < hand[small][0])
+            small = j;
+      }
+
+      t_rank = hand[i][0];
+      t_suit = hand [i][1];
+      hand[i][0] = hand[small][0];
+      hand[i][1] = hand [small][1];
+      hand[small][0] = t_rank;
+      hand[small][1] = t_suit;
+   }
+
 // check for flush -- same SUIT
+   count = 0;
    temp = hand[0][1];
    for (int i = 0; i <= NUM_SUITS; i++)
       (temp == hand[i][1]) ? count++ : count ;
@@ -110,42 +128,24 @@ void analyze_hand(void)
       flush = true;
 
 //check for straight -- ascending RANK!
-   int a[5] = { 0 };
-   for (int i = 0; i < HAND_RANK; i++) {
-      a[i] = hand[i][0];
+   for (int i = 1; i < NUM_CARDS; i++) {
+      if (hand[i][0] - hand[card-1][0] != 1)
+         break;
+      if (card == NUM_CARDS -1)
+         straight = true;
    }
 
-   quicksort(a, 0, HAND_RANK -1);
-
-   temp = a[0];
-   count = 0;
-   for (int i = 0; i < HAND_RANK; i++)
-      (temp++ == a[i]) ? count++ : count;
-
-   if (count == NUM_CARDS)
-      straight = true;
-   
 // check for 4-of-a-kind, 3-of-a-kind, and pairs
-   for (int i = 0; i < HAND_RANK; i++)
-      (a[i] == a[++i]) ? pairs++ : pairs ;
+   for (int i = 0; i < NUM_CARDS; i++) {
+      temp = 0;
+      for (int j = i + 1; j < NUM_CARDS; j++) {
+         (hand[j][0] == hand[i][0]) ? temp++ : temp;
+      }
 
-   printf("pairs: %d\n", pairs);
-   
-
-   for (rank = 0; rank < NUM_RANKS; rank++) {
-      if (pairs == 4) four = true;
-      if (pairs == 3) three = true;
+      if (temp == 1) pairs++ ;
+      if (temp == 2) three = true;
+      if (temp == 3)  four = true;
    }
-}
-
-int card_exists(int rank, int suit)
-{
-   for (int i = 0; i < HAND_RANK; i++) {
-         if (hand[i][0] == rank && hand[i][1] == suit)
-            return 1;
-   }
-
-   return 0;
 }
 
 void print_result(void)
@@ -162,39 +162,4 @@ void print_result(void)
    else                   printf("High card");
    
    printf("\n\n");
-}
-
-void quicksort(int a[], int low, int high)
-{
-   int middle;
-
-   if (low >= high)
-      return;
-
-   middle = split(a, low, high);
-   quicksort(a, low, middle - 1);
-   quicksort(a, middle + 1, high);
-}
-
-int split(int a[], int low, int high)
-{
-   int part_element = a[low];
-
-   for (;;) {
-      while (low < high && part_element <= a[high])
-         high --;
-      if (low >= high)
-       break;
-
-      a[low++] = a[high];
-
-      while (low < high && a[low] <= part_element)
-         low++;
-      if (low >= high)
-         break;
-      a[high--] = a[low];
-   }
-
-   a[high] = part_element;
-   return high;
 }
