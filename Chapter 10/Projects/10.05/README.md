@@ -2,6 +2,7 @@
 Modify the `poker.c` program of Section 10.05 by allowing "ace-low" straights (ace, two, three, four, five).
 ### Solution
 See 10.05.c for complete program.
+
 Section added to `analyse_hand` function, for solution:
 ```c
 /* check for ace-low */
@@ -12,6 +13,7 @@ if (num_in_rank[12] == 1) als_count++;
    if (als_count == NUM_CARDS)
       ace_low = true;
 ```
+Rank in `print_result` function for "Ace-low straight" needs to be above Flush and Straight, as the below set of cards are seen as a Flush.
 
 #### Output
 ```
