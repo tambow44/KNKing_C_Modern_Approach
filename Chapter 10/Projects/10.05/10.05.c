@@ -123,11 +123,6 @@ void analyze_hand(void)
    three = false;
    pairs = 0;
 
-   /* check for flush */
-   for (suit = 0; suit < NUM_SUITS; suit++)
-      if (num_in_suit[suit] == NUM_CARDS)
-         flush = true;
-
    /* check for ace-low */
    if (num_in_rank[12] == 1) als_count++;
 
@@ -136,6 +131,11 @@ void analyze_hand(void)
       
    if (als_count == NUM_CARDS)
       ace_low = true;
+
+   /* check for flush */
+   for (suit = 0; suit < NUM_SUITS; suit++)
+      if (num_in_suit[suit] == NUM_CARDS)
+         flush = true;
 
    /* check for straight */
    rank = 0;
@@ -167,10 +167,10 @@ void analyze_hand(void)
 void print_result(void)
 {
    if (straight && flush) printf("Straight flush");
-   else if (ace_low)      printf("Ace-low straight");
    else if (four)         printf("Four of a kind");
    else if (three && 
             pairs == 1)   printf("Full house");
+   else if (ace_low)      printf("Ace-low straight");
    else if (flush)        printf("Flush");
    else if (straight)     printf("Straight");
    else if (three)        printf("Three of a kind");
