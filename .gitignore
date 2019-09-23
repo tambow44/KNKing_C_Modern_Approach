@@ -1,3 +1,4 @@
 # Out files
 *.o
 *.out
+_*
