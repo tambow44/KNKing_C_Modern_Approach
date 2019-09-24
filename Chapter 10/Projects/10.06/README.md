@@ -13,8 +13,9 @@ Enter an RPN expression: 5 8 * 4 9 - / =
 Value of expression: -8
 Enter an RPN expression: q
 ```
-If the stack overflows, the program will display the message `Expression is too complex` and terminate. If the stack underflows (because of an expression such as `1 2 + +`), the program will display the message `Not enough operands in expression` and terminate. *Hint:* Incorporate the stack code from Section 10.02 into your program. Use `scanf(" %d", &ch)` to read the operators and operands.
+If the stack overflows, the program will display the message `Expression is too complex` and terminate. If the stack underflows (because of an expression such as `1 2 + +`), the program will display the message `Not enough operands in expression` and terminate. *Hint:* Incorporate the stack code from Section 10.02 into your program. Use `scanf(" %c", &ch)` to read the operators and operands.
 ### Solution
+I could not get this working with `scanf(" %c", %ch)`, instead opting for `(ch = getchar() != '\n')`
 See 10.06.c for complete program.
 
 #### Output
