@@ -1,88 +1,64 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
 /* Macro Definitions */
-#define SIZE 101
+#define STACK_SIZE 101
 
-/* External Variables */
-int stack[SIZE];
-int top = -1;
+/* external variables */
+char stack[STACK_SIZE];
+int top = 0;
 
-/* Function Definitions */
-void make_empty();
 void push(int i);
-void pop();
- int top_stack();
+char pop();
 
-/* Main body */
 int main(void)
 {
-   char ch, oper1, oper2;
+   char ch, operand1, operand2;
 
-   while (true) {
+   while(true) {
       printf("Enter an RPN expression: ");
 
+      /* While runs until user presses return  */ 
       while ((ch = getchar()) != '\n') {
-         if (ch == 'q' || ch == 'Q') 
-            return 0;
-         else if (ch == '=')
-            printf("Value of expression: %d\n", top_stack());
+         if (ch >= '0' && ch <= '9')
+            push(ch - '0');
          else
-            switch (ch) {
-               case '*' : 
-                  oper1 = top_stack(); pop();
-                  oper2 = top_stack(); pop(); 
-                  push(oper1 * oper2);
-                  break;
-               case '/' : 
-                  oper1 = top_stack(); pop();
-                  oper2 = top_stack(); pop(); 
-                  push(oper1 / oper2);
-                  break;
-               case '+' : 
-                  oper1 = top_stack(); pop();
-                  oper2 = top_stack(); pop(); 
-                  push(oper1 + oper2);
-                  break;
-               case '-' : 
-                  oper1 = top_stack(); pop();
-                  oper2 = top_stack(); pop(); 
-                  push(oper1 - oper2);
-                  break;
-               default  :
-                  push(ch);
-                  break;
-            }
+            switch(ch) {
+               case '+' :  push(pop() + pop());
+                           break;
+               case '-' :  operand2 = pop(); operand1 = pop();
+                           push(operand1 - operand2);
+                           break;
+               case '*' :  push(pop() * pop());
+                           break;
+               case '/' :  operand2 = pop(); operand1 = pop();
+                           push(operand1 / operand2);
+                           break;
+               case '=' :  printf("Value of expression: %d\n", pop());
+                           break;
+               case ' ' :  break;
+               default  :  exit(EXIT_FAILURE);
+            } 
       }
    }
-
    return 0;
-}
-
-/* Clear the stack */
-void make_empty()
-{
-   for (int i = 0; i < SIZE; i++)
-      top--;
 }
 
 void push(int i)
 {
-   if (top == SIZE - 1)
-      printf("ERROR: Stack Overflow!\n");
-   else
-      stack[++top] = i;
+   if (top == STACK_SIZE) {
+      printf("\nStack Overflow!\n");
+      exit(EXIT_FAILURE);
+   } else
+      stack[top++] = i;
 }
 
-void pop()
+char pop(void)
 {
-   if (top == -1)
-      printf("ERROR: Stack underflow!\n");
-   else
-      top--;
-}
-
-int top_stack()
-{
-   return stack[top];
+   if (top == 0) {
+      printf("\nStack Underflow!\n");
+      exit(EXIT_FAILURE);
+   } else
+      return stack[--top];
 }
