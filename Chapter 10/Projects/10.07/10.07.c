@@ -14,7 +14,8 @@ const int segments[MAX_DIGITS][7] = {{1, 1, 1, 1, 1, 1, 0},  /* 0 */
                                      {1, 1, 1, 0, 0, 0, 0},  /* 7 */
                                      {1, 1, 1, 1, 1, 1, 1},  /* 8 */
                                      {1, 1, 1, 1, 0, 1, 1}}; /* 9 */
-      int digits[4][MAX_DIGITS * 4];
+char digits[4][MAX_DIGITS * 4];
+
 
 /* Function prototypes  */
 void clear_digits_array(void);
@@ -40,14 +41,14 @@ void clear_digits_array(void)
 {
    int i = 0, j = 0;
    for (; i < 4; i++) {
-      for (; j < MAX_DIGITS * 4; j++)
+      for (; j < (MAX_DIGITS * 4); j++)
          digits[i][j] = 0;
    }
 }
 
 void process_digit(int digit, int position)
 {
-
+   
 
 }
 
