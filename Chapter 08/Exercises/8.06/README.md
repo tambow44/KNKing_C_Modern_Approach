@@ -10,8 +10,7 @@ Suppose that we want to set up an array that remembers which segments should be 
 ```
   0
 5 6 1
-4   2
-  3
+4 3 2
 ```
 Here's what the array might look like, with each row representing one digit:
 ```c
